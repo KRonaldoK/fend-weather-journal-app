@@ -1,4 +1,12 @@
 // Setup empty JS object to act as endpoint for all routes
+import express from "express"
+import { Application, Request, Response } from "express"
+import bodyParser from "body-parser"
+
+const app: Application = express();
+const port = 3000;
+
+let projectData;
 projectData = {};
 
 // Require Express to run server and routes
@@ -17,3 +25,8 @@ app.use(express.static('website'));
 
 
 // Setup Server
+app.listen(port, () => {
+  console.log(`Http server set at port ${port}`);
+});
+
+export default app;
