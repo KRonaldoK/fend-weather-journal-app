@@ -1,6 +1,6 @@
 /* Global Variables */
 const OPEN_WEATHER_MAP_BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
-const OPEN_WEATHER_MAP_API_KEY = "4917d53e0c5752fc9a9bf1b098f3aa3a"
+const OPEN_WEATHER_MAP_API_KEY = "4917d53e0c5752fc9a9bf1b098f3aa3a&units=imperial"
 
 /* OpenWeatherMapApi */
 const getWeatherFromOpenWeatherMapApi = async (zipCode: number): Promise<any> => {
@@ -40,7 +40,7 @@ const getWeatherJournal = async () => {
 
 const updateView = (weatherJournal: any) => {
   (document.getElementById('date') as HTMLElement).innerHTML = weatherJournal.date;
-  (document.getElementById('temp') as HTMLElement).innerHTML = 'Celsius: ' + Math.round(Number(weatherJournal.temperature) - 273.15).toFixed(1) + 'ºC <br><br> ' + 'Fahrenheit: ' + (Math.round(Number(weatherJournal.temperature) - 273.15) * 9/5 + 32).toFixed(1) + 'ºF';
+  (document.getElementById('temp') as HTMLElement).innerHTML = 'Degrees: ' + weatherJournal.temperature;
   (document.getElementById('content') as HTMLElement).innerHTML = weatherJournal.content;
 }
 
