@@ -16,7 +16,7 @@ Run `npm run start` for a dev server using [Nodemon](https://github.com/remy/nod
 
 or
 
-Run `node dist/index` for a dev server.
+Run `node dist/server` for a dev server.
 
 In the browser, go to:
 
